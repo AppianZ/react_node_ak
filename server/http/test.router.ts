@@ -5,9 +5,10 @@ const target = require('./../data/data');
 
 router.get('/getarticle', async function (req: Request, res: Response, next: NextFunction) {
     const id = req.query.id.toString();
-    target.list.filter(item => {
+    const list = target.list.filter(item => {
         return item.id === id;
     });
+    console.log(list);
     try {
         if (list.length > 0) {
             console.log('-------');
