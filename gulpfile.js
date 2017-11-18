@@ -16,7 +16,7 @@ const argv = require('yargs')
 
 gulp.task('build', function () {
   runSequence('pre-build', function () {
-    exec('rm -rf ./dist/data && cp -rf  ./server/data ./dist/data', function (err, output) {
+    exec('rm -rf ./dist/data && cp -rf ./server/data ./dist/data  && npm run restart:prod', function (err, output) {
      if (err) console.log(err);
      console.log(output);
      });
