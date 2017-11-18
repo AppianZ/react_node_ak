@@ -12,14 +12,20 @@ router.get('/getarticle', async function (req: Request, res: Response, next: Nex
     console.log(list);
     try {
         if (list.length > 0) {
-            console.log(fs);
-            fs.readFile(`./../data/article${id}.md`, function(err, data) {
-                console.log('?????');
-                console.log(err);
-                res.send({
-                    code: 200,
-                    content: marked(data.toString()),
-                });
+            console.log(__dirname);
+            fs.readFile(`${__dirname}/../data/article${id}.md`, function(err, data) {
+                if(err){
+                    res.send({
+                        code: 502,
+                        errorMsg: 'article is not found',
+                    });
+                } else {
+                    console.log(data);
+                    res.send({
+                        code: 200,
+                        content: marked(data.toString()),
+                    });
+                }
             });
         } else res.send({
             code: 404,
