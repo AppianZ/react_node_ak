@@ -1,6 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 const router = Router();
-import marked from  'marked';
+const marked = require('marked');
 const fs = require('fs');
 const target = require('./../data/data');
 
