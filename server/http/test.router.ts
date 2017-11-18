@@ -9,10 +9,8 @@ router.get('/getarticle', async function (req: Request, res: Response, next: Nex
     const list = target.list.filter(item => {
         return item.id === id;
     });
-    console.log(list);
     try {
         if (list.length > 0) {
-            console.log(__dirname);
             fs.readFile(`${__dirname}/../data/article${id}.md`, function(err, data) {
                 if(err){
                     res.send({
