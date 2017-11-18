@@ -13,7 +13,7 @@ router.get('/getarticle', async function (req: Request, res: Response, next: Nex
     try {
         if (list.length > 0) {
             console.log(fs);
-            fs.readFile(`./../data/article${id}.md`, function(err, data) => {
+            fs.readFile(`./../data/article${id}.md`, function(err, data) {
                 console.log('?????');
                 console.log(err);
                 res.send({
