@@ -1,4 +1,4 @@
-export default [{
+module.exports = [{
   title: '如何造一个『为移动端而生』的日历',
   desc: 'How to Build a Calendar <br/>【算法轮子】【手写类教程】【原生Js】',
   id:'20170601',

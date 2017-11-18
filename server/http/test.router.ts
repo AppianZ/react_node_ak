@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 const router = Router();
-import list from './../data/data';
 import marked from  'marked';
+const list = require('./../data/data');
 
 router.get('/getarticle', async function (req: Request, res: Response, next: NextFunction) {
     const id = req.query.id.toString;
