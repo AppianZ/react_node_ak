@@ -1,11 +1,11 @@
 import { Router, Request, Response, NextFunction } from 'express';
 const router = Router();
 import marked from  'marked';
-const list = require('./../data/data');
+const target = require('./../data/data');
 
 router.get('/getarticle', async function (req: Request, res: Response, next: NextFunction) {
     const id = req.query.id.toString;
-    list.filter(item => {
+    target.list.filter(item => {
         return item.id === id;
     });
     try {
