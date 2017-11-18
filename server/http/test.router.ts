@@ -18,7 +18,6 @@ router.get('/getarticle', async function (req: Request, res: Response, next: Nex
                         errorMsg: 'article is not found',
                     });
                 } else {
-                    console.log(data);
                     res.send({
                         code: 200,
                         content: marked(data.toString()),
