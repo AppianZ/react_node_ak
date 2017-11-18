@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 const router = Router();
 import marked from  'marked';
-import fs from  'fs';
+const fs = require('fs');
 const target = require('./../data/data');
 
 router.get('/getarticle', async function (req: Request, res: Response, next: NextFunction) {
@@ -13,7 +13,7 @@ router.get('/getarticle', async function (req: Request, res: Response, next: Nex
     try {
         if (list.length > 0) {
             console.log(fs);
-            fs.readFile(`./../data/article${id}.md`, (err, data) => {
+            fs.readFile(`./../data/article${id}.md`, function(err, data) => {
                 console.log('?????');
                 console.log(err);
                 res.send({
