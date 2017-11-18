@@ -4,7 +4,7 @@ import marked from  'marked';
 const target = require('./../data/data');
 
 router.get('/getarticle', async function (req: Request, res: Response, next: NextFunction) {
-    const id = req.query.id.toString;
+    const id = req.query.id.toString();
     target.list.filter(item => {
         return item.id === id;
     });
