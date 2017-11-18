@@ -6,6 +6,8 @@ const rsync = require('gulp-rsync');
 const execFile = require('child_process');
 const ts = require('gulp-typescript');
 const tsProject = ts.createProject('./tsconfig.json');
+const runSequence = require('run-sequence');
+const exec = require('child_process').exec;
 const argv = require('yargs')
 .alias('e', 'env')
 .alias('p', 'project')
@@ -13,12 +15,21 @@ const argv = require('yargs')
 .argv;
 
 gulp.task('build', function () {
-	return gulp.src('./server/**/*.ts')
-	.pipe(tsProject({
-		sourceMap: false,
-	}))
-	.pipe(gulp.dest('./dist'));
+  runSequence('pre-build', function () {
+    exec('rm -rf ./dist/data && cp -rf  ./server/data ./dist/data', function (err, output) {
+     if (err) console.log(err);
+     console.log(output);
+     });
+  });
 });
+
+gulp.task('pre-build', function () {
+  gulp.src('./server/**/*.ts')
+    .pipe(tsProject({
+      sourceMap: false,
+    }))
+    .pipe(gulp.dest('./dist'));
+})
 
 gulp.task('ts-compile', function () {
 	return gulp.src('./server/**/*.ts')

@@ -1,13 +1,11 @@
 #!/bin/sh
 
 sshremote=root@39.108.218.145
-base_path="/home/appian/workspace"
+base_path="/home/appian/workspace/"
 
 env=$1
 project=$2
 type=$3
-
-path=$base_path"/"$env"_"
 
 public="/public/"
 dist="/dist/"

@@ -1,25 +1,22 @@
 import { Router, Request, Response, NextFunction } from 'express';
 const router = Router();
-import checkToken from '../middleware/check.token';
-import TestApi from '../apis/test';
+import list from '../data/data';
+import marked from  'marked';
 
-// 浏览器发过来的post请求  /api/newauth
-router.post('/newauth', checkToken, async function (req: Request, res: Response, next: NextFunction) {
+router.get('/getarticle', async function (req: Request, res: Response, next: NextFunction) {
+    const id = req.query.id.toString;
+    list.filter(item => {
+        return item.id === id;
+    });
     try {
-        res.send({
-            msg: 'ok, to homepage',
+        if (list.length > 0) {
+            console.log('-------');
+            console.log(require(`./../data/article${id}.md`));
+            res.send(marked('#hello word'));
+        } else res.send({
+            errorCode: 404,
+            errorMsg: 'article is not found'
         });
-    } catch (err) {
-        next(err);
-    }
-});
-
-// 浏览器发过来的get请求  /api/newtest
-router.get('/newtest', checkToken, async function (req: Request, res: Response, next: NextFunction) {
-    try {
-        const result = await new TestApi(req).getTest(req.body);
-        console.log(result.data);
-        res.send(result.data);
     } catch (err) {
         next(err);
     }

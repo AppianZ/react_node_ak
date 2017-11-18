@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "node_prod:spa",
+    "name": "appian_react_spa",
     "script": "./dist/bin/www.js",
     "exec_mode": "cluster",
     "max-memory-restart": "300M",

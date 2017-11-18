@@ -5,18 +5,13 @@ console.log('~~~~~~~~ env: ' + env + ' ~~~~~~~')
 const common = {};
 
 const test = {
-    port: '3002',
-    baseURL: 'http://54.222.196.128:8081/',
+    port: '3115',
+    baseURL: 'http://appian.me.meckodo.com/',
 };
 
 const pro = {
-    port: '3003',
-    baseURL: 'http://localhost:8081',
-};
-
-const local = {
-    port: '1500',
-    baseURL: 'http://192.168.5.237:8081/api/',
+    port: '3116',
+    baseURL: 'http://appian.me.meckodo.com/',
 };
 
 let config;
@@ -28,7 +23,7 @@ switch (env) {
         config = Object.assign(test, common);
         break;
     default:
-        config = Object.assign(local, common);
+        config = Object.assign(pro, common);
         break;
 }
 

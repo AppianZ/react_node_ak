@@ -1,12 +1,10 @@
 {
-  "name": "Close2Node",
+  "name": "appian_react_node_spa",
   "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "pm2 startOrGracefulReload process.dev.json --env local",
     "restart": "pm2 startOrRestart process.dev.json --env local",
-    "start:test": "pm2 start process.test.json --env test",
-    "restart:test": "pm2 startOrGracefulReload process.test.json --env test",
     "start:prod": "pm2 start process.prod.json  --env prod",
     "restart:prod": "pm2 startOrGracefulReload process.prod.json --env prod"
   },
@@ -29,6 +27,7 @@
     "hbs": "~4.0.1",
     "ioredis": "^3.1.1",
     "log4js": "^1.1.1",
+    "marked": "^0.3.6",
     "minimatch": "^3.0.4",
     "nunjucks": "^3.0.0",
     "qs": "^6.5.1",
@@ -49,6 +48,7 @@
     "gulp-rsync": "0.0.8",
     "gulp-scp2": "^0.2.0",
     "gulp-typescript": "^3.1.7",
+    "run-sequence": "^2.2.0",
     "typescript": "^2.3.4",
     "yargs": "^8.0.1"
   }
