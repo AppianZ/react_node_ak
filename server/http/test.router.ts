@@ -12,7 +12,7 @@ router.get('/getarticle', async function (req: Request, res: Response, next: Nex
     try {
         if (list.length > 0) {
             console.log('-------');
-            console.log(require(`./../data/article${id}.md`));
+            console.log(marked(require(`./../data/article${id}.md`)));
             res.send(marked('#hello word'));
         } else res.send({
             errorCode: 404,
