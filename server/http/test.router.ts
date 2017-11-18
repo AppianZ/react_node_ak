@@ -1,6 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 const router = Router();
 import marked from  'marked';
+import fs from 'fs';
 const target = require('./../data/data');
 
 router.get('/getarticle', async function (req: Request, res: Response, next: NextFunction) {
@@ -12,8 +13,9 @@ router.get('/getarticle', async function (req: Request, res: Response, next: Nex
     try {
         if (list.length > 0) {
             console.log('-------');
-            console.log(marked(require(`./../data/article${id}.md`)));
-            res.send(marked('#hello word'));
+            fs.readFile(`./../data/article${id}.md`, (err, data) => {
+                res.send(marked(data.toString()));
+            });
         } else res.send({
             errorCode: 404,
             errorMsg: 'article is not found'
