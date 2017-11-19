@@ -21,6 +21,7 @@ router.get('/getarticle', async function (req: Request, res: Response, next: Nex
                     res.send({
                         code: 200,
                         content: marked(data.toString()),
+                        obj: list[0],
                     });
                 }
             });
