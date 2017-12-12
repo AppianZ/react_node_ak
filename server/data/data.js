@@ -10,6 +10,11 @@ module.exports = {
     id:'20171015',
     url: 'https://ohovav7hg.qnssl.com/articlecover15.png'
   }, {
+   title: '从零开始学正则Reg',
+   desc: 'From Zero to Regular <br/>【From Zero系列】【手写类教程】',
+   id:'20170813',
+   url: 'https://ohovav7hg.qnssl.com/articlecover16.png'
+   }, {
     title: '如何造一个『为移动端而生』的日历',
     desc: 'How to Build a Calendar <br/>【算法轮子】【手写类教程】【原生Js】',
     id:'20170601',
@@ -29,12 +34,7 @@ module.exports = {
     desc: 'From Zero to Svg <br/>【From Zero系列】【网剧类教程】【学习笔记】',
     id:'20170401',
     url: 'https://ohovav7hg.qnssl.com/articlecover10.png'
-  }, /*{
-    title: '从零开始学正则Reg',
-    desc: 'From Zero to Regular <br/>【From Zero系列】【手写类教程】',
-    id:'20170313',
-    url: 'https://ohovav7hg.qnssl.com/articlecover9.png'
-  },*/ {
+  }, {
     title: '如何造一个『为移动端而生』的自定义多级联动选择器',
     desc: 'How to Build a Time-picker or Multi-picker<br/>【算法轮子】【手写类教程】【原生Js】',
     id:'20170203',
