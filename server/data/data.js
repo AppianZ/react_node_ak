@@ -1,5 +1,20 @@
 module.exports = {
   list: [{
+    title: '给自己6条Scrum项目管理的建议',
+    desc: 'Give 6 advise to myself<br/>【项目管理】【ScrumMaster】',
+    id:'20180627',
+    url: 'https://ohovav7hg.qnssl.com/articlecover38.jpeg'
+  }, {
+    title: '如何实现一个渐变环形进度条',
+    desc: 'How to use svg to build ProgressBar?<br/>【手写类教程】【SVG】【Vue】',
+    id:'20180601',
+    url: 'https://ohovav7hg.qnssl.com/articlecover36.jpeg'
+  }, {
+    title: 'Scrum の 角色 & 价值观',
+    desc: 'What is Scrum?<br/>【项目管理】【ScrumMaster】',
+    id:'20180502',
+    url: 'https://ohovav7hg.qnssl.com/articlecover35.jpeg'
+  }, {
     title: '名侦探带你寻找 Vue 双向绑定的线索',
     desc: 'How is defineProperty work? <br/>【手写类教程】【原生Js】【Vue】',
     id:'20180116',
